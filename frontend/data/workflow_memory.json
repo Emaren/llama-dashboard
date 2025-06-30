@@ -1,0 +1,18 @@
+{
+  "project": "Llama Dashboard + AoE2HD",
+  "workflows": {
+    "Deploy Frontend": {
+      "steps": [
+        "Run `npm run build`",
+        "Restart with `pm2 restart llama-ui --update-env`",
+        "Ensure port 3005 is open and mapped via nginx"
+      ],
+      "files": [
+        "frontend/package.json",
+        "frontend/app/page.tsx",
+        "frontend/components/AgentDashboard.tsx"
+      ],
+      "notes": "Served at https://llama.aoe2hdbets.com via nginx to port 3005"
+    }
+  }
+}
