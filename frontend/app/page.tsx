@@ -4,11 +4,12 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import { AgentChatTile } from '@/components/AgentChatTile';
 
-import LatencySpark   from '@/components/LatencySpark';
+import LatencySpark from '@/components/LatencySpark';
 import TokenRateSpark from '@/components/TokenRateSpark';
-import CPUMemTrend    from '@/components/CPUMemTrend';
+import CPUMemTrend from '@/components/CPUMemTrend';
 import AgentHeartbeat from '@/components/AgentHeartbeat';
 import ContextUsage from '@/components/ContextUsage';
+import TokenStatsTile from '@/components/TokenStatsTile';
 
 // Fix: ContextScopeMeter comes from src/
 const ContextScopeMeter = dynamic(() => import('@/components/ContextScopeMeter'), { ssr: false });
@@ -42,6 +43,9 @@ export default function Home() {
         <Dynamic name="SessionHistory" />
         <Dynamic name="ToneBiasAdjuster" />
         <Dynamic name="SystemVitals" />
+
+        {/* 💰 Token Usage Tile */}
+        <TokenStatsTile />
 
         {/* ── new live metrics tiles ─────────────────────── */}
         <LatencySpark />

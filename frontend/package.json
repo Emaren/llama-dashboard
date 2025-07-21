@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "NEXT_PUBLIC_API_BASE=http://localhost:8005 next dev -p 3005 --turbopack",
     "build": "next build",
-    "start": "next start -p 3005",
+    "start": "NEXT_PUBLIC_API_BASE=http://localhost:8005 next start -p 3005",
     "lint": "next lint"
   },
   "dependencies": {
@@ -16,6 +16,7 @@
     "next": "15.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-is": "^19.1.0",
     "recharts": "^3.0.2",
     "zustand": "^5.0.6"
   },
@@ -26,5 +27,6 @@
     "@types/react-dom": "^19",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "packageManager": "yarn@1.22.22"
 }
