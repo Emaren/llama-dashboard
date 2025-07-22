@@ -9,6 +9,7 @@ export default function ClientProviders({ children }: { children: ReactNode }) {
     defaultOptions: {
       queries: {
         staleTime: 5_000,
+        // @ts-ignore
         cacheTime: 1000 * 60 * 5,
         retry: 1,
         refetchOnWindowFocus: false,
@@ -21,4 +22,3 @@ export default function ClientProviders({ children }: { children: ReactNode }) {
 
   return <QueryClientProvider client={client}>{children}</QueryClientProvider>;
 }
-

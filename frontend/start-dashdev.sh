@@ -1,1 +1,2 @@
-/Users/tonyblum/projects/llama-scripts/start-dashdev.sh
+#!/bin/bash
+echo "Dummy start-dashdev.sh"
